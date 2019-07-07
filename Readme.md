@@ -1,9 +1,9 @@
-# Setting up Git and IntelliJ IDEA
+# Setting up Git and IntelliJ with SSH access to Github in Windows
 
 Make sure latest version of Git is installed for windows. [Download Git](https://git-scm.com/downloads)
 
 ## Git Configuration
-Add the following lines at global level or project level .gitconfig file depending on the use case
+Add the following lines at global level or project level .gitconfig file depending on the use case.
 ```
 [user]
 	name = github_username
@@ -11,11 +11,11 @@ Add the following lines at global level or project level .gitconfig file dependi
 ```
 
 ## SSH Configuration
-
-Add your ssh public key is added to github.com
+Generate SSH public and private key pairs.  
+Add your SSH public key to github.com  
 Copy your private key to ~/.ssh directory
 
-~/.ssh/config file, Add the following lines
+Add the following lines to ~/.ssh/config file
 ```
 Host github.com
 	HostName github.com
@@ -23,18 +23,26 @@ Host github.com
 	IdentityFile ~/.ssh/ssh_private_key
 ```
 
-## How "Start IntelliJ IDEA.cmd" works
-Double clicking on "Start IntelliJ IDEA.cmd" will execute start-ssh-agent inside Git installation directory and then opens IntelliJ IDEA. 
-So now IntelliJ IDEA will inherit the SSH_AUTH_SOCK and SSH_AGENT_PID environment variable set by start-ssh-agent.
+## Opening IntelliJ
+Double clicking on "Open IntelliJ.cmd" will execute start-ssh-agent, which is inside Git installation directory and then opens IntelliJ.  
+So now IntelliJ will inherit the SSH_AUTH_SOCK and SSH_AGENT_PID environment variables set by start-ssh-agent.
+
+## Opening Windows Command Line
+Double clicking on "Open Windows Command Line.cmd" will execute start-ssh-agent and then opens a Windows Command Line.  
+Now Windows Command Line will have the same SSH_AUTH_SOCK and SSH_AGENT_PID environment variables as IntelliJ.  
+Make sure that your current directory is the project directory for the Git commands to work in the Windows Command Line.
+
+## Notes
+As the IntelliJ Command Line and Windows Command Line has the same SSH_AUTH_SOCK and SSH_AGENT_PID environment variables, any SSH private key added to one of them will be available to the other.
+
 
 ## Setting up custom commands
-To use the custom commands in custom_commands directory, set a new PATH environment variable pointing to custom_commands directory.
+To use the custom commands present in custom_commands directory, set a new PATH environment variable pointing to custom_commands directory.
 ```
 PATH=C:\Users\user_name\Desktop\custom_commands
 ```
-
-Now the custom commands can be invoked directly from the CMD command line.
-ak - Add Key (Add Private Key To The Agent)
-lk - List Key (List all Private Key Added To The Agent)
-rk - Remove Key (Remove all Private Key from The Agent)
+Now these custom commands can be invoked directly from the IntelliJ Command Line or Windows Command Line.  
+```ak``` - Add Key (Add private key to the SSH agent)  
+```lk``` - List Key (List all private key added to the SSH agent)  
+```rk``` - Remove Key (Remove all private key from the SSH agent)  
 
