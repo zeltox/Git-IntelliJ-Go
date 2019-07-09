@@ -11,7 +11,11 @@ Add the following lines at global level or project level .gitconfig file dependi
 ```
 
 ## SSH Configuration
-Generate SSH public and private key pairs.  
+Generate SSH public and private key pairs.
+```
+ssh-keygen -t ed25519 -N Password_123 -C ssh_key_comment -f /path/to/ssh_key
+```
+
 Add your SSH public key to github.com  
 Copy your private key to ~/.ssh directory
 
