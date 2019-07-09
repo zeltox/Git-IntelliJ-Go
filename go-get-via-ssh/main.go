@@ -78,34 +78,11 @@ func main() {
 			fmt.Println(errors.New("Blank argument passed"))
 
 		} else {
+
 			if args_len > 15 && args[1][:15] == "git@github.com:" {
-				index := -1
-				for i, r := range args[1][15:] {
-					if string(r) == "/" {
-						index = i
-						break
-					}
-				}
 
-				if index == -1 || index == 0 {
-					fmt.Println(errors.New("Invalid remote Git repository"))
-				} else {
+				check_git_username_and_repo(args[1], args_len, 15, &git_username, &git_repo_name)
 
-					git_username = args[1][15 : 15+index]
-					fmt.Println("git_username " + git_username)
-
-					if args_len > 15+index+1 {
-
-						git_repo_name = args[1][15+index+1:]
-						fmt.Println("git_repo_name " + git_repo_name)
-
-					} else {
-						fmt.Println(errors.New("Invalid remote Git repository"))
-					}
-					//
-					// fmt.Println("git_repo_name " + args[1][15+index+1:])
-
-				}
 			} else if args_len > 19 && args[1][:19] == "https://github.com/" {
 
 				check_git_username_and_repo(args[1], args_len, 19, &git_username, &git_repo_name)
@@ -115,7 +92,6 @@ func main() {
 				check_git_username_and_repo(args[1], args_len, 11, &git_username, &git_repo_name)
 
 			} else {
-
 				fmt.Println(errors.New("Invalid remote Git repository"))
 			}
 
