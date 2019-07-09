@@ -1,4 +1,4 @@
-# Setting up Git and IntelliJ with SSH access to Github in Windows
+# Setting up Git, IntelliJ, GO with SSH access to Github in Windows
 
 Make sure latest version of Git is installed for windows. [Download Git](https://git-scm.com/downloads)
 
