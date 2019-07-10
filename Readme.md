@@ -52,5 +52,7 @@ Now these custom commands can be invoked directly from the IntelliJ Command Line
 ```ua``` - Unlock Agent (Unlock Agent the SSH agent with a password)  
 ```lk``` - List Key (List all private key added to the SSH agent)  
 ```rk``` - Remove Key (Remove all private key from the SSH agent)  
-```ggs ``` - Remove Key (Remove all private key from the SSH agent)  
+```ggs git@github.com:user_name/repo_name.git``` - Go Get via SSH (Downloads the remote github repository like "go get" but uses SSH)  
+```ggs https://github.com/user_name/repo_name.git```  
+```ggs github.com/user_name/repo_name```  
 
