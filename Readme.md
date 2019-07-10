@@ -47,12 +47,16 @@ PATH=C:\Users\user_name\Desktop\custom_commands
 ```
 Now these custom commands can be invoked directly from the IntelliJ Command Line or Windows Command Line.  
 ```ak``` - Add Key (Add private key to the SSH agent)  
-```akt 3600s  or  akt 60m  or  akt 1h``` - Add Key with Time (Add private key to the SSH agent for a specified time duration)  
+```akt``` - Add Key with Time (Add private key to the SSH agent for a specified time duration)  
+```akt 3600s```  
+```akt 60m```  
+```akt 1h```  
 ```la``` - Lock Agent (Lock Agent the SSH agent with a password)  
 ```ua``` - Unlock Agent (Unlock Agent the SSH agent with a password)  
 ```lk``` - List Key (List all private key added to the SSH agent)  
 ```rk``` - Remove Key (Remove all private key from the SSH agent)  
-```ggs git@github.com:user_name/repo_name.git``` - Go Get via SSH (Downloads the remote github repository like "go get" but uses SSH)  
+```ggs``` - Go Get via SSH (Downloads the remote github repository like "go get" but uses SSH)  
+```ggs git@github.com:user_name/repo_name.git```  
 ```ggs https://github.com/user_name/repo_name.git```  
 ```ggs github.com/user_name/repo_name```  
 
