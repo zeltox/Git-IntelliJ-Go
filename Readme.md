@@ -1,4 +1,4 @@
-# Setting up Git and IntelliJ with SSH access to Github in Windows
+# Setting up Git, IntelliJ, GO with SSH access to Github in Windows
 
 Make sure latest version of Git is installed for windows. [Download Git](https://git-scm.com/downloads)
 
@@ -11,7 +11,11 @@ Add the following lines at global level or project level .gitconfig file dependi
 ```
 
 ## SSH Configuration
-Generate SSH public and private key pairs.  
+Generate SSH public and private key pairs.
+```
+ssh-keygen -t ed25519 -N Password_123 -C ssh_key_comment -f /path/to/ssh_key
+```
+
 Add your SSH public key to github.com  
 Copy your private key to ~/.ssh directory
 
