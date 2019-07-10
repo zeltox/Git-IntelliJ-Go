@@ -47,6 +47,10 @@ PATH=C:\Users\user_name\Desktop\custom_commands
 ```
 Now these custom commands can be invoked directly from the IntelliJ Command Line or Windows Command Line.  
 ```ak``` - Add Key (Add private key to the SSH agent)  
+```akt 3600s  or  akt 60m  or  akt 1h``` - Add Key with Time (Add private key to the SSH agent for a specified time duration) 
+```la``` - Lock Agent (Lock Agent the SSH agent with a password)  
+```ua``` - Unlock Agent (Unlock Agent the SSH agent with a password)  
 ```lk``` - List Key (List all private key added to the SSH agent)  
 ```rk``` - Remove Key (Remove all private key from the SSH agent)  
+```ggs ``` - Remove Key (Remove all private key from the SSH agent)  
 

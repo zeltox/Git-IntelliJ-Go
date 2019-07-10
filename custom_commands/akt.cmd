@@ -1,0 +1,1 @@
+"C:\Program Files\Git\usr\bin\ssh-add" "-t %1" "C:\Users\user_name\.ssh\ssh_private_key"
