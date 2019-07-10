@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -26,16 +25,14 @@ func check_git_username_and_repo(args string, args_len int, num int, git_usernam
 	} else {
 
 		*git_username = args[num : num+index]
-		fmt.Println("git_username " + *git_username)
+		// ("git_username " + *git_username)
 
-		//if args_len > num+index+1 {
-		fmt.Println(num)
+		//fmt.Println(num)
 
 		if len(args[num+index+1:]) > len(".git") && args[(args_len-len(".git")):args_len] == ".git" {
 
-			fmt.Println("")
 			*git_repo_name = args[num+index+1:]
-			fmt.Println("git_repo_name " + *git_repo_name)
+			//fmt.Println("git_repo_name " + *git_repo_name)
 		} else if num == 11 {
 
 			*git_repo_name = args[num+index+1:] + ".git"
@@ -49,13 +46,12 @@ func check_git_username_and_repo(args string, args_len int, num int, git_usernam
 }
 
 func main() {
-	//	git@github.com:gopi25/Git-IntelliJ-Go.git
-	//	https://github.com/gopi25/Git-IntelliJ-Go.git
-	//	github.com/gopi25/Git-IntelliJ-Go
-	//tonystark
-	//ironman-suite
+	//	git@github.com:user_name/repo_name.git
+	//	https://github.com/user_name/repo_name.git
+	//	github.com/user_name/repo_name
+
 	args := os.Args
-	//
+
 	git_username := ""
 	git_repo_name := ""
 
@@ -64,12 +60,12 @@ func main() {
 		log.Fatalf("More than 1 arguments passed\n")
 	} else if no_of_args == 2 {
 
-		fmt.Println("Before Trimming White Space: \"" + args[1] + "\"")
+		//fmt.Println("Before Trimming White Space: \"" + args[1] + "\"")
 		args[1] = strings.TrimSpace(args[1])
-		fmt.Println("After Trimming White Space: \"" + args[1] + "\"")
+		//fmt.Println("After Trimming White Space: \"" + args[1] + "\"")
 
 		args_len := len(args[1])
-		//fmt.Println(args[1]
+
 		if args_len == 0 {
 
 			log.Fatalf("Blank argument passed\n")
@@ -173,7 +169,7 @@ func main() {
 		}
 
 	} else {
-		fmt.Println(errors.New("No arguments passed"))
+		log.Fatalf("No arguments passed\n")
 	}
 
 }
