@@ -63,9 +63,9 @@ To use the custom commands present in custom_commands directory, set a new PATH 
 ```
 PATH=C:\Users\user_name\Desktop\custom_commands
 ```
-Now these custom commands can be invoked directly from the IntelliJ Command Line or Windows Command Line.
+Now these custom commands can be invoked directly from the IntelliJ Command Line or Windows Command Line.  
 ```ak``` - Add Key (Add private key to the SSH agent)  
-```akt``` - Add Key with Time (Add private key to the SSH agent for a specified time duration)
+```akt``` - Add Key with Time (Add private key to the SSH agent for a specified time duration)  
 ```akt 3600s```  
 ```akt 60m```  
 ```akt 1h```  
