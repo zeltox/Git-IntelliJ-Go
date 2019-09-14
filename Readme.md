@@ -69,6 +69,7 @@ Now these custom commands can be invoked directly from the IntelliJ Command Line
 ```akt 3600s```  
 ```akt 60m```  
 ```akt 1h```  
+Note: For the above commands remember to update the location of private key at their respective .cmd files
 ```la``` - Lock Agent (Lock Agent the SSH agent with a password)  
 ```ua``` - Unlock Agent (Unlock Agent the SSH agent with a password)  
 ```lk``` - List Key (List all private key added to the SSH agent)  
