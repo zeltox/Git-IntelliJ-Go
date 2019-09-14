@@ -50,8 +50,8 @@ Double clicking on "Open IntelliJ.cmd" will execute start-ssh-agent, which is in
 So now IntelliJ will inherit the SSH_AUTH_SOCK and SSH_AGENT_PID environment variables set by start-ssh-agent
 
 ## Opening Windows Command Line
-Double clicking on "Open CMD.cmd" will execute start-ssh-agent and then opens a Windows Command Line.
-Now Windows Command Line will have the same SSH_AUTH_SOCK and SSH_AGENT_PID environment variables as IntelliJ.
+Double clicking on "Open CMD.cmd" will execute start-ssh-agent and then opens a Windows Command Line.  
+Now Windows Command Line will have the same SSH_AUTH_SOCK and SSH_AGENT_PID environment variables as IntelliJ.  
 Make sure that your current directory is the project directory for the Git commands to work in the Windows Command Line.
 
 ## Notes
