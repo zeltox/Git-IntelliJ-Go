@@ -19,7 +19,7 @@ ssh-keygen -t ed25519 -N Password_123 -C ssh_key_comment -f /path/to/ssh_key
 Add your SSH public key to github.com
 Copy your private key to ~/.ssh directory.
 
-Add the following lines to ~/.ssh/config file
+Add the following lines to ~/.ssh/config file.
 ```
 Host github.com
 	HostName github.com
