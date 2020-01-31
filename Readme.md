@@ -43,9 +43,13 @@ Automatic Procedure:
 1. Run “Create  go_workspace.cmd” at the location where go_workspace need to be created.
 2. Set PATH environment variable pointing to go_workspace\bin directory.
 
+## Installing IntelliJ
+Download and install IntelliJ for windows. [Download IntelliJ](https://www.jetbrains.com/idea/)
 
 
 ## Opening IntelliJ
+Edit "Open IntelliJ.cmd" to specify the installation directory of IntelliJ and it's respective .exe file
+
 Double clicking on "Open IntelliJ.cmd" will execute start-ssh-agent, which is inside Git installation directory and then opens IntelliJ.
 So now IntelliJ will inherit the SSH_AUTH_SOCK and SSH_AGENT_PID environment variables set by start-ssh-agent
 
