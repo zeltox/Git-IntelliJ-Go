@@ -19,7 +19,7 @@ ssh-keygen -t ed25519 -N Password_123 -C ssh_key_comment -f /path/to/ssh_key
 Add your SSH public key to github.com
 Copy your private key to ~/.ssh directory.
 
-Add the following lines to ~/.ssh/config file
+Add the following lines to ~/.ssh/config file.
 ```
 Host github.com
 	HostName github.com
@@ -50,8 +50,8 @@ Double clicking on "Open IntelliJ.cmd" will execute start-ssh-agent, which is in
 So now IntelliJ will inherit the SSH_AUTH_SOCK and SSH_AGENT_PID environment variables set by start-ssh-agent
 
 ## Opening Windows Command Line
-Double clicking on "Open CMD.cmd" will execute start-ssh-agent and then opens a Windows Command Line.
-Now Windows Command Line will have the same SSH_AUTH_SOCK and SSH_AGENT_PID environment variables as IntelliJ.
+Double clicking on "Open CMD.cmd" will execute start-ssh-agent and then opens a Windows Command Line.  
+Now Windows Command Line will have the same SSH_AUTH_SOCK and SSH_AGENT_PID environment variables as IntelliJ.  
 Make sure that your current directory is the project directory for the Git commands to work in the Windows Command Line.
 
 ## Notes
@@ -69,6 +69,7 @@ Now these custom commands can be invoked directly from the IntelliJ Command Line
 ```akt 3600s```  
 ```akt 60m```  
 ```akt 1h```  
+Note: For the above commands remember to update the location of private key at their respective .cmd files.  
 ```la``` - Lock Agent (Lock Agent the SSH agent with a password)  
 ```ua``` - Unlock Agent (Unlock Agent the SSH agent with a password)  
 ```lk``` - List Key (List all private key added to the SSH agent)  
