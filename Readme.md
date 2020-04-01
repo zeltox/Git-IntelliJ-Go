@@ -9,7 +9,11 @@ Add the following lines at global level or project level .gitconfig file dependi
 	name = github_username
 	email = email@gmail.com
 ```
-
+or run the following commands
+```
+git config --global user.name "github_username"
+git config --global user.email "email@gmail.com"
+```
 ## SSH Configuration
 Generate SSH public and private key pairs.
 ```
