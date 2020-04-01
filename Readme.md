@@ -4,16 +4,21 @@ Make sure latest version of Git is installed for windows. [Download Git](https:/
 
 ## Git Configuration
 Add the following lines at global level or project level .gitconfig file depending on the use case.
+Location of .gitconfig file for global level:
+On unix systems, ~ /.gitconfig
+On windows, C:\Users\<username>\.gitconfig
 ```
 [user]
 	name = github_username
 	email = email@gmail.com
 ```
-or run the following commands
+or run the following commands to set global values
 ```
 git config --global user.name "github_username"
 git config --global user.email "email@gmail.com"
 ```
+
+
 ## SSH Configuration
 Generate SSH public and private key pairs.
 ```
