@@ -3,10 +3,10 @@
 Make sure latest version of Git is installed for windows. [Download Git](https://git-scm.com/downloads)
 
 ## Git Configuration
-Add the following lines at global level or project level .gitconfig file depending on the use case.
-Location of .gitconfig file for global level:
-On unix systems, ~ /.gitconfig
-On windows, C:\Users\<username>\.gitconfig
+Add the following lines at global level or project level .gitconfig file depending on the use case.  
+Location of .gitconfig file for global level:  
+On unix systems, ~ /.gitconfig  
+On windows, C:\Users\<username>\.gitconfig  
 ```
 [user]
 	name = github_username
