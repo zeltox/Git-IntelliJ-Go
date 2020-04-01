@@ -1,8 +1,6 @@
 package main
 
 import (
-	"bufio"
-	"bytes"
 	"fmt"
 	"log"
 	"os"
@@ -93,22 +91,27 @@ func main() {
 				git_ssh_url := "git@github.com:" + git_username + "/" + git_repo_name
 
 				cmd_name := "git" //
-				cmd_args := []string{"ls-remote",
-					git_ssh_url}
+				cmd_args := []string{"ls-remote", git_ssh_url}
 				cmd1 := exec.Command(cmd_name, cmd_args...)
-				output1, err := cmd1.CombinedOutput()
 
-				Reader := bytes.NewReader(output1) // output is slice of bytes
-				scanner := bufio.NewScanner(Reader)
+				cmd1.Stdin = os.Stdin
+				cmd1.Stdout = os.Stdout
+				cmd1.Stderr = os.Stderr
+
+				if err := cmd1.Start(); err != nil {
+					log.Fatalf("cmd.Start() failed with %s\n", err)
+				}
+
+				err := cmd1.Wait()
 
 				if err != nil {
-					for scanner.Scan() {
-						line := strings.TrimSpace(scanner.Text())
-						fmt.Println(line)
-					}
-					log.Fatalf("cmd.Run() failed with %s\n", err)
+					//for scanner.Scan() {
+					//	line := strings.TrimSpace(scanner.Text())
+					//	fmt.Println(line)
+					//}
+					fmt.Println("LOL HERE!!!")
+					log.Fatalf("cmd.Wait() failed with %s\n", err)
 				} else {
-
 					path := strings.TrimSpace(os.Getenv("GOPATH"))
 
 					if path == "" {
@@ -138,22 +141,16 @@ func main() {
 								}
 								cmd1 := exec.Command(cmd_name, cmd_args...)
 
-								output1, err := cmd1.CombinedOutput()
+								cmd1.Stdin = os.Stdin
+								cmd1.Stdout = os.Stdout
+								cmd1.Stderr = os.Stderr
 
-								Reader := bytes.NewReader(output1) // output is slice of bytes
-								scanner := bufio.NewScanner(Reader)
+								if err := cmd1.Start(); err != nil {
+									log.Fatalf("cmd.Start() failed with %s\n", err)
+								}
 
-								if err != nil {
-									for scanner.Scan() {
-										line := strings.TrimSpace(scanner.Text())
-										fmt.Println(line)
-									}
-									log.Fatalf("cmd.Run() failed with %s\n", err)
-								} else {
-									for scanner.Scan() {
-										line := strings.TrimSpace(scanner.Text())
-										fmt.Println(line)
-									}
+								if err := cmd1.Wait(); err != nil {
+									log.Fatalf("cmd.Wait() failed with %s\n", err)
 								}
 
 							}
