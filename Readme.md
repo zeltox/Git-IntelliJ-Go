@@ -4,8 +4,14 @@ Make sure latest version of Git is installed for windows. [Download Git](https:/
 
 ## Git Configuration
 Location of .gitconfig file for global level:  
-On unix systems, ~ /.gitconfig  
-On windows, C:\Users\<username>\.gitconfig  
+On unix systems
+```
+~ /.gitconfig
+```
+On windows
+```
+C:\Users\<username>\.gitconfig  
+```
 Add the following lines at global level or project level .gitconfig file depending on the use case.  
 ```
 [user]
